@@ -59,6 +59,18 @@ trait Product {
     }
 
     /**
+     * Восстановление товара по идентификатору
+     * @param $id
+     * @return ApiResponse
+     */
+    public function recoverProduct($id) {
+        return $this->client->executeUpdateRequest(
+            $this->generateCompoundUrl(self::API_URL_PRODUCTS, $id),
+            []
+        );
+    }
+
+    /**
      * Обновление товара
      * @param int $id
      * @param array $data
