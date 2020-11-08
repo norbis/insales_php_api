@@ -64,8 +64,8 @@ trait Product {
      * @return ApiResponse
      */
     public function recoverProduct($id) {
-        return $this->client->executeUpdateRequest(
-            $this->generateCompoundUrl(self::API_URL_PRODUCTS, $id),
+        return $this->client->executeCreateRequest(
+            $this->generateCompoundUrl(self::API_URL_PRODUCTS_RECOVER, $id),
             []
         );
     }
